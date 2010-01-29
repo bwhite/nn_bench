@@ -17,4 +17,4 @@ def nn(test_points, train_points):
            train_points.ctypes.data_as(_double_ptr), len(train_points),
            len(train_points[0]),
            indeces.ctypes.data_as(_int_ptr))
-    return indeces.tolist()
+    return indeces
