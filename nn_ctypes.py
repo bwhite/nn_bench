@@ -12,6 +12,8 @@ _nn.nn.argtypes = [_double_ptr, _int, _double_ptr, _int, _int, _int_ptr]
 
 
 def nn(test_points, train_points):
+    test_points = np.ascontiguousarray(test_points)
+    train_points = np.ascontiguousarray(train_points)
     indeces = np.zeros(len(test_points), dtype=np.int)
     _nn.nn(test_points.ctypes.data_as(_double_ptr), len(test_points),
            train_points.ctypes.data_as(_double_ptr), len(train_points),
