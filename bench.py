@@ -3,6 +3,7 @@ import time
 
 import nn_np
 import nn_ctypes
+import nn_swig
 
 
 def bench(name, module, test_points, train_points):
@@ -19,7 +20,7 @@ def make_points(num_points, num_dims):
 def main(num_train_points=10000, num_test_points=20, num_dims=1024):
     test_points = make_points(num_test_points, num_dims)
     train_points = make_points(num_train_points, num_dims)
-    methods = [('Numpy', nn_np), ('Ctypes', nn_ctypes)]
+    methods = [('Numpy', nn_np), ('Ctypes', nn_ctypes), ('Swig', nn_swig)]
     for x, y in methods:
         print(bench(x, y, test_points, train_points))
 

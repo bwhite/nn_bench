@@ -1,3 +1,5 @@
+#include "nn.h"
+
 void nn(double *test_points, int num_test_points, double *train_points, int num_train_points, int num_dims, int *indeces) {
   int i, j, k;
   for (i = 0; i < num_test_points; i++) {
